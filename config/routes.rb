@@ -12,6 +12,19 @@ Rails.application.routes.draw do
     end
   end
 
+  #api
+  namespace :api do
+    namespace :v1 do
+      resources :portfolios, only: [:index, :show]
+    end
+  end
+
+  # scope :api, defaults: { format: :json } do
+  #   resources :portfolios, only: [:index, :show]
+  # end
+
+
+
   root to: 'pages#home'
 
 end

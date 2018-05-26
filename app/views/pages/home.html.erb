@@ -5,4 +5,10 @@
 <%= @posts.inspect %>
 
 <h1>Skills</h1>
-<%= @skills.inspect %>
+<%= @skills.pluck(:title, :percent_utilized) %>
+
+<h1>Portfolios</h1>
+<% @portfolios.each do |p| %>
+    <h3><%=p.title%></h3>
+    <p><%=p.body%></p>
+ <% end %>
